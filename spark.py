@@ -1,9 +1,11 @@
+import os
 from pyspark.sql import SparkSession
 
+os.environ["HADOOP_HOME"] = "C:/Program Files/hadoop-3.3.6"
+os.environ["JAVA_HOME"] = "C:/Program Files/Java/jdk-11"
+
 # create session
-spark = SparkSession.builder \
-    .appName("CSV to Temp View") \
-    .getOrCreate()
+spark = SparkSession.builder.getOrCreate()
 
 
 # read files
